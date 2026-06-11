@@ -4,15 +4,15 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Package PWA for Windows Store
-        uses: pwa-builder/pwabuilder-windows-chromium-action@v1
+        uses: pwa-builder/pwabuilder-windows-chromium-action@v2
         with:
           package-id: Noxen.Prophet-5SynthPianoMIDI
           publisher-id: CN=0EC8B9F2-2D7B-401B-B80E-C0D87D46E298
           publisher-display-name: Noxen
           output: output/
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: msix-package
           path: output/
